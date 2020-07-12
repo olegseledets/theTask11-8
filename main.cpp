@@ -3,15 +3,14 @@
 
 int main() {
   int W, D, N;
-  std::cout << "Сколько капель воды добавить? ";
+  std::cout << "Количество капель воды: ";
   std::cin >> W;
-  std::cout << "Сколько капель антибиотика добавить? ";
+  std::cout << "Количество капель антибиотика: ";
   std::cin >> D;
-  std::cout << "Сколько подселить бактерий? ";
+  std::cout << "Королебактерии: ";
   std::cin >> N;
-
   if (W <= 0 || N < 0 || D < 0) {
-    std::cout << "Нужно добавить хотя бы одну каплю воды. Количество бактерий и капель не может быть отрицательным."
+    std::cout << "Количество не может быть отрицательным";
   } 
   else {
     int Nnew = N;
@@ -21,7 +20,7 @@ int main() {
         break;
       }
       float concentration = (float) D / (float) W;
-      std::cout << "Текущая минута " << minute << ". ";
+      std::cout << "Текущая минута " << minute << "\n";
       std::cout << "Концентрация антибиотика: " << concentration << "\nколичество бактерий: " << Nnew << "\n";
       Nnew *= 2;
       Nnew -= std::round(Nnew * concentration);
